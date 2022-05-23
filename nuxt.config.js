@@ -25,13 +25,15 @@ export default defineNuxtConfig({
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@/assets/css/tailwind.css"],
+  css: ["@/assets/css/tailwind.css", "@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: ["~/components", "~/components/layouts"],
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ["@nuxt/postcss8", "@pinia/nuxt", "@vueuse/nuxt"],
@@ -73,9 +75,13 @@ export default defineNuxtConfig({
         name: "Français",
       },
     ],
+    strategy: "no_prefix",
     defaultLocale: "en",
+    detectBrowserLanguage: false,
     vueI18n: {
+      legacy: false,
       fallbackLocale: "en",
+      locale: "en",
       messages: {
         en: i18n.en,
         fr: i18n.fr,
