@@ -1,11 +1,10 @@
 {
-  "name": "engganuxt",
+  "name": "sgnuxtbridge",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi generate",
-    "start": "node ./dist/index.html",
     "generate": "nuxi generate"
   },
   "dependencies": {
