@@ -13,7 +13,7 @@
             :to="nav.path"
             class="text-base leading-6 text-gray-500 hover:text-gray-900"
           >
-            {{ nav.name }}
+            {{ $t(`navigation.${nav.name}`) }}
           </nuxt-link>
         </div>
 

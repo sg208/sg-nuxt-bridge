@@ -1,5 +1,5 @@
 import { defineNuxtConfig } from "@nuxt/bridge";
-import i18n from "./locales/i18n";
+import i18nOptions from "./locales/i18n";
 
 export default defineNuxtConfig({
   bridge: {
@@ -14,7 +14,7 @@ export default defineNuxtConfig({
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "engganuxt",
+    title: "sg-nuxt-bridge",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -50,46 +50,15 @@ export default defineNuxtConfig({
       },
     },
     build: {
-      transpile: [
-        // necessary for nuxt bridge
-        "pinia",
-      ],
+      transpile: ["pinia"],
     },
-    fallback: "404.html",
   },
   generate: {
     fallback: "404.html",
   },
-  i18n: {
-    locales: [
-      {
-        code: "en",
-        name: "English",
-      },
-      {
-        code: "es",
-        name: "Español",
-      },
-      {
-        code: "fr",
-        name: "Français",
-      },
-    ],
-    strategy: "no_prefix",
-    defaultLocale: "en",
-    detectBrowserLanguage: false,
-    vueI18n: {
-      legacy: false,
-      fallbackLocale: "en",
-      locale: "en",
-      messages: {
-        en: i18n.en,
-        fr: i18n.fr,
-        es: i18n.es,
-      },
-    },
-  },
+  // i18n options is moved to ./locales/i18n.js
+  i18n: i18nOptions,
   axios: {
-    baseURL: "https://www.sorasirulo.com/wp-json/wp/v2/", // Used as fallback if no runtime config is provided
+    baseURL: "base url here", // Used as fallback if no runtime config is provided
   },
 });

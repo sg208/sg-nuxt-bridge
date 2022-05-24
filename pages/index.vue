@@ -16,10 +16,8 @@
       </h1>
       <div
         class="mx-auto mt-5 text-gray-500 md:mt-12 md:max-w-lg md:text-center lg:text-lg"
-      >
-        Simplifying the creation of landing pages, blog pages, application pages
-        and so much more!
-      </div>
+      ></div>
+      {{ $t("page_Index.Hero-subheading") }}
       <div class="flex flex-col items-center mt-12 text-center">
         <span class="relative inline-flex w-full md:w-auto">
           <a
