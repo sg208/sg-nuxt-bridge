@@ -1,14 +1,12 @@
 <template>
-  <div class="container grid text-center mx-auto">
-    <div class="grid-cols-12 mt-10">
-      {{ $t("welcome") }}
-    </div>
+  <div class="container grid mx-auto text-center">
+    <div class="grid-cols-12 mt-10"></div>
     <div class="grid-cols-12 mt-10">
       <nuxt-link
         v-for="locale in availableLocales"
         :key="locale.code"
         :to="switchLocalePath(locale.code)"
-        class="border-2 border-solid rounded-md shadow-md px-5 py-2 mr-5"
+        class="px-5 py-2 mr-5 border-2 border-solid rounded-md shadow-md"
       >
         {{ locale.name }}
       </nuxt-link>

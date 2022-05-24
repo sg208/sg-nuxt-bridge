@@ -32,7 +32,7 @@
               :to="nav.path"
               class="inline-block w-full py-2 mx-0 ml-6 font-medium text-left text-indigo-600 md:ml-0 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center"
             >
-              {{ nav.name }}
+              {{ $t(`navigation.${nav.name}`) }}
             </nuxt-link>
           </div>
           <div

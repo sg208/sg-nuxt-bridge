@@ -1,0 +1,21 @@
+{
+  "page_Error": {
+    "page-not-found": "Page not found",
+    "error-occured": "An error occurred",
+    "homepage": "Home page"
+  },
+  "page_Index": {
+    "Hero-heading": "Start Crafting Your Next Great Idea",
+    "Hero-subheading": "Simplifying the creation of landing pages, blog pages, application pages and so much more!"
+  },
+  "navigation": {
+    "Home": "Home",
+    "Features": "Features",
+    "Blog": "Blog",
+    "Contact": "Contact",
+    "About": "About",
+    "Team": "Team",
+    "Pricing": "Pricing",
+    "Terms": "Terms"
+  }
+}

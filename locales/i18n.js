@@ -1,10 +1,22 @@
 // Import all the specific cultures here
-import en from "./en";
-import es from "./es";
-import fr from "./fr";
+import en from "./en.json";
 
 export default {
-  en: en,
-  es: es,
-  fr: fr,
+  locales: [
+    {
+      code: "en",
+      name: "English",
+    },
+  ],
+  strategy: "no_prefix",
+  defaultLocale: "en",
+  detectBrowserLanguage: false,
+  vueI18n: {
+    legacy: false,
+    fallbackLocale: "en",
+    locale: "en",
+    messages: {
+      en,
+    },
+  },
 };
