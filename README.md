@@ -16,10 +16,11 @@ This is a working template with Nuxt Bridge. The stacks are below and this is st
 - Fancy routing transitions
 - Layouts
 - UI by tails/DevDojo
+- Deployed to Cloudflare Pages
 
 ## Deployed to Render.com
 
-https://sg-nuxt-bridge.onrender.com/
+https://sg-nuxt-bridge.engg.me
 
 ## Deployment notes
 
