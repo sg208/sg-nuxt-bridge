@@ -30,7 +30,3 @@ https://sg-nuxt-bridge.engg.me
 - Build command: `npm run build`
 - 404 redirect for your hoster: `/404.html`
 - Custom 404 error page: `./layouts/error.vue`
-
-## Limitation
-
-- Preview is currently not working so you are unable to test the generated files.

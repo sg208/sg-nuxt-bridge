@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi generate",
-    "generate": "nuxi generate"
+    "generate": "nuxi generate",
+    "start": "nuxt start"
   },
   "dependencies": {
     "@nuxt/bridge": "0.10.1",
