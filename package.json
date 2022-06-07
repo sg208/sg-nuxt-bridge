@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "nuxi generate",
-    "generate": "nuxi generate",
+    "build": "nuxt generate",
+    "generate": "nuxt generate",
     "start": "nuxt start"
   },
   "dependencies": {
