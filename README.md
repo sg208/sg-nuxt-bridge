@@ -16,12 +16,16 @@ This is a working template with Nuxt Bridge. The stacks are below and this is st
 - Fancy routing transitions
 - Layouts
 - UI by tails/DevDojo
-- Deployed to Cloudflare Pages
+- Deploy to Cloudflare Pages
+- Deploy to Bunny.net (Storage + CDN) with GitHub Actions (CI)
 
-## Deployed to Render.com
+## Deploy to Cloudflare Pages
 
 https://sg-nuxt-bridge.engg.me
 
+## Deploy to Bunny.net (Storage + CDN) with GitHub Actions
+
+https://sg-nuxt-bridge-bunny.engg.me
 ## Deployment notes
 
 - Node version: `16.15.0`
