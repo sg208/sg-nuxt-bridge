@@ -1,13 +1,13 @@
 # Deploy to Bunny.net on new push to master then invalidate the pull zone
 # Credit 1: https://github.com/marketplace/actions/setup-node-js-environment
-# Credit 2: https://github.com/marketplace/actions/bunnycdn-gh-action 
+# Credit 2: https://github.com/marketplace/actions/bunnycdn-gh-action
 # Credit 3: https://cmichel.medium.com/how-to-deploy-a-create-react-app-with-github-actions-5e01f7a7b6b
 
 name: CI to Bunny.net Storage + CDN
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   workflow_dispatch:
 
 jobs:
@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Use Node.js
         uses: actions/setup-node@v2
-      
+
       - name: Install dependencies based on .node-version
         run: npm install
-      
+
       - name: Generate files
         run: npm run build
 
