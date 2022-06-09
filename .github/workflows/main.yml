@@ -19,20 +19,20 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
 
-      - name: Install dependencies based on .node-version
+      - name: Install dependencies
         run: npm install
 
       - name: Generate files
         run: npm run build
 
-      - name: Deploy to sg-nuxt-bridge storage zone
+      - name: Deploy to storage
         uses: Snider/bunnycdn-gh-action@v2.0.0
         with:
           source: "dist"
           storageZoneName: "sg-nuxt-bridge"
           accessKey: "${{ secrets.BUNNY_CDN_STORAGE_KEY }}"
 
-      - name: Purge/invalidate pull zone
+      - name: Purge CDN cache
         uses: Snider/bunnycdn-gh-action@v2.0.0
         with:
           zoneId: "${{ secrets.BUNNY_CDN_PULL_ZONE_ID }}"
