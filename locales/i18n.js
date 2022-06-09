@@ -6,6 +6,9 @@ export default {
     {
       code: "en",
       name: "English",
+      iso: "en-US",
+      dir: "ltr",
+      file: "en.json",
     },
   ],
   strategy: "no_prefix",

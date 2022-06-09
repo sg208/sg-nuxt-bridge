@@ -26,6 +26,7 @@ https://sg-nuxt-bridge.engg.me
 ## Deploy to Bunny.net (Storage + CDN) with GitHub Actions
 
 https://sg-nuxt-bridge-bunny.engg.me
+
 ## Deployment notes
 
 - Node version: `16.15.0`
