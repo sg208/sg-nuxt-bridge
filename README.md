@@ -15,17 +15,17 @@ This is a working template with Nuxt Bridge. The stacks are below and this is st
 - Axios
 - Fancy routing transitions
 - Layouts
-- UI by tails/DevDojo
+- UI by Tails (DevDojo)
 - Deploy to Cloudflare Pages
-- Deploy to Bunny.net (Storage + CDN) with GitHub Actions (CI)
+- Deploy to Bunny.net (Storage + CDN) with GitHub Actions (CI) **_ CURRENTLY DISABLED _**
 
 ## Deploy to Cloudflare Pages
 
 https://sg-nuxt-bridge.engg.me
 
-## Deploy to Bunny.net (Storage + CDN) with GitHub Actions
+## Deploy to Bunny.net (Storage + CDN) with GitHub Actions **_ CURRENTLY DISABLED _**
 
-https://sg-nuxt-bridge-bunny.engg.me
+https://sg-nuxt-bridge-bunny.engg.me **_ CURRENTLY DISABLED _**
 
 ## Deployment notes
 
