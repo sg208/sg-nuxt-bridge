@@ -1,6 +1,8 @@
 {
   "name": "sg-nuxt-bridge",
   "version": "1.0.0",
+  "license": "MIT",
+  "author": "Syailendra Ginting",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.34.8",
