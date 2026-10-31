@@ -15,7 +15,12 @@ describe("GlobalNav", () => {
     const wrapper = await mountSuspended(GlobalNav);
     const toggle = wrapper.get("button[aria-label='Toggle menu']");
     expect(toggle.attributes("aria-expanded")).toBe("false");
+    expect(wrapper.get("#global-nav-menu").classes()).toContain("hidden");
     await toggle.trigger("click");
     expect(toggle.attributes("aria-expanded")).toBe("true");
+    // A leftover static "hidden" class would win over "flex" and keep the menu closed
+    const menuClasses = wrapper.get("#global-nav-menu").classes();
+    expect(menuClasses).toContain("flex");
+    expect(menuClasses).not.toContain("hidden");
   });
 });
