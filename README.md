@@ -32,6 +32,6 @@ https://sg-nuxt-bridge-bunny.engg.me **_ CURRENTLY DISABLED _**
 - Node version: `16.15.0`
 - Target: `static`
 - Public folder: `dist`
-- Build command: `npm run build`
+- Build command: `pnpm build`
 - 404 redirect for your hoster: `/404.html`
 - Custom 404 error page: `./layouts/error.vue`
