@@ -2,11 +2,52 @@
   "page_Error": {
     "page-not-found": "Page not found",
     "error-occured": "An error occurred",
-    "homepage": "Home page"
+    "homepage": "Home page",
+    "lead": "The page you asked for is not here. It may have moved, or the address may be mistyped."
   },
   "page_Index": {
-    "Hero-heading": "Start Crafting Your Next Great Idea",
-    "Hero-subheading": "Simplifying the creation of landing pages, blog pages, application pages and so much more!"
+    "Hero-heading": "Start crafting your next great idea",
+    "Hero-subheading": "Simplifying the creation of landing pages, blog pages, application pages and so much more!",
+    "purchase": "Purchase now",
+    "price-note": "only $15/mo",
+    "learn-more": "Learn more"
+  },
+  "page_Contact": {
+    "lead": "Pick the language you want to read this site in.",
+    "languages": "Languages",
+    "current": "Current language"
+  },
+  "page_Demo": {
+    "lead": "This page shows translated strings, read in the template and in script setup."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "menu": "Toggle menu",
+    "primary-nav": "Main",
+    "footer-nav": "Footer",
+    "social": "Social links",
+    "home": "brands, home page"
+  },
+  "page_Pricing": {
+    "popular": "Most popular"
+  },
+  "page_Team": {
+    "sample": "A sample team of fictional people, to show how this page reads."
+  },
+  "testimonials": {
+    "lead": "Sample quotes from fictional customers, here to show how this section reads. Replace them with real words from real people."
+  },
+  "theme": {
+    "dark": "Dark theme"
+  },
+  "account": {
+    "sign-in": "Sign in",
+    "sign-up": "Sign up"
+  },
+  "footer": {
+    "pages": "Pages",
+    "follow": "Follow",
+    "rights": "SomeCompany, Inc. All rights reserved."
   },
   "navigation": {
     "Home": "Home",

@@ -1,9 +1,87 @@
 /* Page transitions */
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.5s;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
 }
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
+  transform: translateY(8px);
+}
+
+/* Buttons: one shape for the whole site, square corners */
+.button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.375rem;
+  font-weight: 560;
+  line-height: 1.2;
+  background-color: var(--ink);
+  color: var(--ground);
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+.button:hover {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+}
+.button:active {
+  transform: translateY(1px);
+}
+
+/* Text links with a quiet underline that firms up on hover */
+.text-link {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  transition: text-decoration-color 0.2s ease;
+}
+.text-link:hover {
+  text-decoration-color: currentColor;
+}
+
+/* Hero headline: each part rises into place once */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* Sections settle in as they scroll into view, where supported */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    animation: none !important;
+  }
 }

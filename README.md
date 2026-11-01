@@ -14,7 +14,7 @@ This started as a working template with Nuxt Bridge. It now runs on Nuxt 4; the 
 - VueUse
 - Fancy routing transitions
 - Layouts
-- UI by Tails (DevDojo)
+- Demo content from Tails (DevDojo), restyled with design tokens and a light/dark theme
 - Vitest + @nuxt/test-utils
 - Deploy to Cloudflare Pages
 - Deploy to Bunny.net (Storage + CDN) with GitHub Actions (CI) **\_ CURRENTLY DISABLED _**
@@ -26,6 +26,7 @@ pnpm install   # Node 24 (.node-version), pnpm (packageManager in package.json)
 pnpm dev       # dev server
 pnpm build     # static site in .output/public (dist symlinks to it)
 pnpm lint      # ESLint + Prettier check
+pnpm typecheck  # vue-tsc via nuxi
 pnpm test      # Vitest
 ```
 
