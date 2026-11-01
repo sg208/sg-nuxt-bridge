@@ -9,9 +9,9 @@
       :lead="isNotFound ? $t('page_Error.lead') : ''"
     >
       <div class="md:col-span-12">
-        <button type="button" class="button" @click="handleGoHome">
+        <NuxtLink to="/" class="button" @click.prevent="handleGoHome">
           {{ $t("page_Error.homepage") }}
-        </button>
+        </NuxtLink>
       </div>
     </PageIntro>
   </NuxtLayout>
