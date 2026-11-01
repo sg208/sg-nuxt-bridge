@@ -5,7 +5,7 @@
 - SHAPE: Nuxt 4 client-only SPA (`ssr: false`, `nuxt.config.ts:5`), prerendered by `nuxt generate` → `.output/public`. WHY: template site, no server logic.
 - HOST: Cloudflare Worker serving static assets — `wrangler.jsonc:5` (`.output/public`) · `wrangler.jsonc:6` SPA not-found fallback · `wrangler.jsonc:8` custom domain `sg-nuxt-bridge.engg.app`. No Worker script; assets only.
 - RETIRED HOSTS: Vercel · Netlify · Railway · Cloudflare Pages · engg.me. No config for them remains.
-- DEPLOY: manual `pnpm run deploy` (`package.json` `deploy` = `pnpm generate && wrangler deploy`); global `wrangler` 4 + env `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`. No CI (`.github/workflows/main.yml` commented out).
+- DEPLOY: manual `pnpm run deploy` (`package.json` `deploy` = `pnpm generate && wrangler deploy`); `wrangler` v4 (devDependency) + env `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`. No CI (`.github/workflows/main.yml` commented out).
 
 ## Layers
 
