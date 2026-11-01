@@ -16,7 +16,7 @@ This started as a working template with Nuxt Bridge. It now runs on Nuxt 4; the 
 - Layouts
 - Demo content from Tails (DevDojo), restyled with design tokens and a light/dark theme
 - Vitest + @nuxt/test-utils
-- Deploy to Cloudflare Pages
+- Deploy to Cloudflare Workers (static assets)
 - Deploy to Bunny.net (Storage + CDN) with GitHub Actions (CI) **\_ CURRENTLY DISABLED _**
 
 ## Getting started
@@ -30,9 +30,11 @@ pnpm typecheck  # vue-tsc via nuxi
 pnpm test      # Vitest
 ```
 
-## Deploy to Cloudflare Pages
+## Deploy to Cloudflare Workers
 
-https://sg-nuxt-bridge.engg.me
+https://sg-nuxt-bridge.engg.app
+
+The site runs as a Cloudflare Worker serving static assets on the sg208 account. `wrangler.jsonc` serves `.output/public`, which `pnpm generate` produces. `pnpm run deploy` builds and runs `wrangler deploy`; it needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in the environment.
 
 ## Deploy to Bunny.net (Storage + CDN) with GitHub Actions **\_ CURRENTLY DISABLED _**
 
