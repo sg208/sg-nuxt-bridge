@@ -34,7 +34,7 @@ pnpm test      # Vitest
 
 https://sg-nuxt-bridge.engg.app
 
-The site runs as a Cloudflare Worker serving static assets on the sg208 account. `wrangler.jsonc` serves `.output/public`, which `pnpm generate` produces. `pnpm deploy` builds and runs `wrangler deploy`; it needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in the environment.
+The site runs as a Cloudflare Worker serving static assets on the sg208 account. `wrangler.jsonc` serves `.output/public`, which `pnpm generate` produces. `pnpm run deploy` builds and runs `wrangler deploy`; it needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in the environment.
 
 ## Deploy to Bunny.net (Storage + CDN) with GitHub Actions **\_ CURRENTLY DISABLED _**
 
