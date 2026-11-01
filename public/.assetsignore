@@ -1,0 +1,2 @@
+# Keep the SPA fallback shell off the site so /200 answers 404
+200.html
