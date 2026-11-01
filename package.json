@@ -18,7 +18,8 @@
     "lint": "eslint . && prettier --check .",
     "lintfix": "eslint . --fix && prettier --write --list-different .",
     "test": "vitest run",
-    "typecheck": "nuxi typecheck"
+    "typecheck": "nuxi typecheck",
+    "deploy": "pnpm generate && wrangler deploy"
   },
   "dependencies": {
     "@fontsource-variable/epilogue": "^5.3.0",
