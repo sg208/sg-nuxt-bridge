@@ -1,19 +1,123 @@
 @import "tailwindcss";
 
 /*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
+  Colour tokens. Light is the default; dark follows the system unless the
+  visitor picked a theme (html.light / html.dark, set by ThemeToggle).
 */
+:root {
+  color-scheme: light;
+  --ground: #efeee7;
+  --surface: #e5e4db;
+  --ink: #161c1a;
+  --muted: #4d5550;
+  --accent: #2b6553;
+  --accent-hover: #22513f;
+  --accent-ink: #ffffff;
+  --band: #18201d;
+  --band-ink: #e4e3db;
+  --band-muted: #a7aea7;
+  --focus: #2b6553;
+  --logo-filter: grayscale(1) contrast(1.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --ground: #141917;
+    --surface: #1d2421;
+    --ink: #e4e3db;
+    --muted: #a3aaa3;
+    --accent: #9fc7b8;
+    --accent-hover: #b8d8cc;
+    --accent-ink: #141917;
+    --band: #0d1110;
+    --band-ink: #e4e3db;
+    --band-muted: #a3aaa3;
+    --focus: #9fc7b8;
+    --logo-filter: grayscale(1) invert(1) brightness(1.4);
+  }
+}
+
+:root.dark {
+  color-scheme: dark;
+  --ground: #141917;
+  --surface: #1d2421;
+  --ink: #e4e3db;
+  --muted: #a3aaa3;
+  --accent: #9fc7b8;
+  --accent-hover: #b8d8cc;
+  --accent-ink: #141917;
+  --band: #0d1110;
+  --band-ink: #e4e3db;
+  --band-muted: #a3aaa3;
+  --focus: #9fc7b8;
+  --logo-filter: grayscale(1) invert(1) brightness(1.4);
+}
+
+@theme inline {
+  --font-sans:
+    "Epilogue Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+  --color-band: var(--band);
+  --color-band-ink: var(--band-ink);
+  --color-band-muted: var(--band-muted);
+}
+
+/* One frame for every section: equal outer margins at every width */
+@utility frame {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 90rem;
+  padding-inline: 1rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+  html {
+    background-color: var(--ground);
+    color: var(--ink);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    font-feature-settings: "kern", "liga";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-ink);
   }
 }

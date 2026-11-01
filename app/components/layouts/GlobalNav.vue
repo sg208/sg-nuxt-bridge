@@ -1,104 +1,109 @@
 <template>
-  <nav class="relative z-50 h-24 select-none">
-    <div
-      class="container relative flex flex-wrap items-center justify-between h-24 mx-auto overflow-hidden font-medium border-b border-gray-200 md:overflow-visible lg:justify-center sm:px-4 md:px-2"
+  <nav
+    :aria-label="$t('a11y.primary-nav')"
+    class="frame relative flex h-20 items-center justify-between gap-6"
+  >
+    <NuxtLink
+      to="/"
+      :aria-label="$t('a11y.home')"
+      class="text-[1.375rem] font-semibold tracking-[-0.03em]"
     >
-      <div class="flex items-center justify-start w-1/4 h-full pr-4">
-        <a href="/" class="inline-block py-4 md:py-0">
-          <span class="p-1 text-xl font-black leading-none text-gray-900">
-            <span>brands</span><span class="text-indigo-600">.</span>
-          </span>
+      brands<span class="text-accent">.</span>
+    </NuxtLink>
+
+    <button
+      ref="menuButton"
+      type="button"
+      :aria-expanded="isMenuOpen"
+      aria-controls="global-nav-menu"
+      :aria-label="$t('a11y.menu')"
+      class="-mr-2 inline-flex size-11 items-center justify-center hover:bg-surface md:hidden"
+      @click="handleToggleMenu"
+    >
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        class="size-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+      >
+        <path v-if="isMenuOpen" d="M6 6l12 12M18 6L6 18" />
+        <path v-else d="M4 8h16M4 16h16" />
+      </svg>
+    </button>
+
+    <div
+      id="global-nav-menu"
+      class="absolute inset-x-0 top-full z-40 flex-col gap-6 bg-surface px-4 pt-4 pb-6 shadow-[0_12px_24px_-12px_rgb(0_0_0/0.25)] sm:px-6 md:static md:flex md:flex-1 md:flex-row md:items-center md:justify-between md:bg-transparent md:p-0 md:shadow-none"
+      :class="isMenuOpen ? 'flex' : 'hidden'"
+    >
+      <ul class="flex flex-col md:mx-auto md:flex-row md:items-center md:gap-1">
+        <li v-for="nav in navigations.header" :key="nav.name">
+          <NuxtLink
+            :to="nav.path"
+            class="nav-link block py-3 text-lg md:px-3 md:py-2 md:text-[0.9375rem]"
+          >
+            {{ $t(`navigation.${nav.name}`) }}
+          </NuxtLink>
+        </li>
+      </ul>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
+        <a href="#" class="text-link py-2 md:text-[0.9375rem]">
+          {{ $t("account.sign-in") }}
         </a>
+        <NuxtLink to="/pricing" class="button md:text-[0.9375rem]">
+          {{ $t("account.sign-up") }}
+        </NuxtLink>
+        <ThemeToggle
+          class="-ml-1 px-1 md:-mr-3 md:ml-0 md:px-0"
+          label-class="md:sr-only"
+        />
       </div>
-      <div
-        id="global-nav-menu"
-        class="top-0 left-0 items-start w-full h-full p-4 text-sm bg-gray-900/50 md:items-center md:w-3/4 md:absolute lg:text-base md:bg-transparent md:p-0 md:relative md:flex"
-        :class="showMenu ? 'flex fixed' : 'hidden'"
-      >
-        <div
-          class="flex-col w-full h-auto overflow-hidden bg-white rounded-lg md:bg-transparent md:overflow-visible md:rounded-none md:relative md:flex md:flex-row"
-        >
-          <a
-            href="#_"
-            class="inline-flex items-center block w-auto h-16 px-6 text-xl font-black leading-none text-gray-900 md:hidden"
-          >
-            tails<span class="text-indigo-600">.</span>
-          </a>
-          <div
-            class="flex flex-col items-start justify-center w-full space-x-6 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center"
-          >
-            <nuxt-link
-              v-for="nav in navigations.header"
-              :key="nav.name"
-              :to="nav.path"
-              class="inline-block w-full py-2 mx-0 ml-6 font-medium text-left text-indigo-600 md:ml-0 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center"
-            >
-              {{ $t(`navigation.${nav.name}`) }}
-            </nuxt-link>
-          </div>
-          <div
-            class="flex flex-col items-start justify-end w-full pt-4 md:items-center md:w-1/3 md:flex-row md:py-0"
-          >
-            <a
-              href="#"
-              class="w-full px-6 py-2 mr-0 text-gray-700 md:px-0 lg:pl-2 md:mr-4 lg:mr-5 md:w-auto"
-            >
-              Sign In
-            </a>
-            <a
-              href="#_"
-              class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white bg-indigo-600 md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-indigo-500 focus:outline-hidden md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-indigo-600"
-            >
-              Sign Up
-            </a>
-          </div>
-        </div>
-      </div>
-      <button
-        type="button"
-        :aria-expanded="showMenu"
-        aria-controls="global-nav-menu"
-        aria-label="Toggle menu"
-        class="absolute right-0 flex flex-col items-center items-end justify-center w-10 h-10 bg-white rounded-full cursor-pointer md:hidden hover:bg-gray-100"
-        @click="handleToggleMenu"
-      >
-        <svg
-          v-show="!showMenu"
-          class="w-6 h-6 text-gray-700"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg
-          v-show="showMenu"
-          class="w-6 h-6 text-gray-700"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
     </div>
   </nav>
 </template>
+
 <script setup>
 const navigations = useNavigationStore();
+const route = useRoute();
 
-const showMenu = ref(false);
+const isMenuOpen = ref(false);
 
 const handleToggleMenu = () => {
-  showMenu.value = !showMenu.value;
+  isMenuOpen.value = !isMenuOpen.value;
 };
+
+const menuButton = useTemplateRef("menuButton");
+
+const handleKeydown = (event) => {
+  if (event.key !== "Escape" || !isMenuOpen.value) return;
+  isMenuOpen.value = false;
+  menuButton.value?.focus();
+};
+
+watch(
+  () => route.fullPath,
+  () => {
+    isMenuOpen.value = false;
+  },
+);
+
+useEventListener("keydown", handleKeydown);
 </script>
+
+<style scoped>
+.nav-link {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.45em;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.2s ease;
+}
+.nav-link:hover {
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+}
+.nav-link.router-link-exact-active {
+  text-decoration-color: var(--accent);
+}
+</style>
