@@ -26,7 +26,8 @@
     "primary-nav": "Main",
     "footer-nav": "Footer",
     "social": "Social links",
-    "home": "brands, home page"
+    "home": "brands, home page",
+    "legal-nav": "Legal"
   },
   "page_Pricing": {
     "popular": "Most popular"
@@ -47,7 +48,9 @@
   "footer": {
     "pages": "Pages",
     "follow": "Follow",
-    "rights": "SomeCompany, Inc. All rights reserved."
+    "rights": "SomeCompany, Inc. All rights reserved.",
+    "source": "Source on GitHub",
+    "source-label": ", opens the sg-nuxt-bridge repository on GitHub"
   },
   "navigation": {
     "Home": "Home",
@@ -57,6 +60,123 @@
     "About": "About",
     "Team": "Team",
     "Pricing": "Pricing",
-    "Terms": "Terms"
+    "Terms": "Terms",
+    "Accessibility": "Accessibility",
+    "Privacy": "Privacy"
+  },
+  "page_Legal": {
+    "updated": "Last updated 1 November 2026"
+  },
+  "page_Accessibility": {
+    "lead": "We aim for this site to meet WCAG 2.2 at level AA. Here is what has been done so far, what we know falls short, and how to tell us about a problem.",
+    "sections": [
+      {
+        "heading": "What we have done",
+        "items": [
+          "Every page sets its language, has a unique title, and uses header, nav, main and footer landmarks.",
+          "A skip link is the first thing you reach with the keyboard. It jumps straight to the main content.",
+          "Links and buttons show a visible focus outline, in both the light and the dark theme.",
+          "The phone menu says whether it is open or closed. Escape closes it and puts focus back on the menu button.",
+          "The theme switch is a real button with a name and a pressed state, and your choice overrides your system setting.",
+          "Page changes are announced to screen readers.",
+          "If your system asks for reduced motion, the page animations are switched off.",
+          "Decorative images have empty alt text, so screen readers skip them."
+        ]
+      },
+      {
+        "heading": "Known problems",
+        "items": [
+          "Some large headings are sized with viewport units, so they may not grow as much as you expect when you zoom in.",
+          "The blog posts, social links and some buttons are placeholders that point nowhere.",
+          "A few labels are written straight into the pages and are not yet translated."
+        ]
+      },
+      {
+        "heading": "How we check",
+        "body": [
+          "Automated tests cover the menu, the theme switch and keyboard focus. The rest has been checked by hand with a keyboard and at a 360 pixel wide screen. No outside audit has been done."
+        ]
+      },
+      {
+        "heading": "Report a problem",
+        "body": [
+          "If something on this site gets in your way, open an issue on GitHub. Say which page you were on and what you were trying to do."
+        ],
+        "link": {
+          "to": "https://github.com/sg208/sg-nuxt-bridge/issues",
+          "label": "Open an issue on GitHub"
+        }
+      }
+    ]
+  },
+  "page_Privacy": {
+    "lead": "This site has no accounts, no analytics and no cookies. Here is what your browser does share, and with whom.",
+    "sections": [
+      {
+        "heading": "What the site stores",
+        "body": [
+          "If you use the dark theme switch, your choice is saved in your browser's local storage under the key vueuse-color-scheme. It never leaves your device. Clear your site data to remove it."
+        ]
+      },
+      {
+        "heading": "Hosting",
+        "body": [
+          "Cloudflare serves the site from a Cloudflare Worker. As the host, Cloudflare may process standard request data, such as your IP address and browser user agent, to deliver pages and protect the service."
+        ]
+      },
+      {
+        "heading": "Other services your browser contacts",
+        "body": [
+          "The blog page loads its sample photos from cdn.devdojo.com, so that service sees the same kind of request data when you open the blog. The fonts are bundled with the site and load from the same address as the pages."
+        ]
+      },
+      {
+        "heading": "Questions",
+        "body": [
+          "There is no email address for this project. Ask questions on GitHub."
+        ],
+        "link": {
+          "to": "https://github.com/sg208/sg-nuxt-bridge/issues",
+          "label": "Open an issue on GitHub"
+        }
+      }
+    ]
+  },
+  "page_Terms": {
+    "lead": "This is a demo project that shows how a Nuxt site can be built. It is not a real business and sells nothing.",
+    "sections": [
+      {
+        "heading": "Use of the site",
+        "body": [
+          "The site and its content are provided as is, without any warranty. The companies, prices, people and quotes on it are made up. Do not rely on them for anything."
+        ]
+      },
+      {
+        "heading": "The code",
+        "body": [
+          "The source code is published under the MIT License. You can read the license in the repository."
+        ],
+        "link": {
+          "to": "https://github.com/sg208/sg-nuxt-bridge",
+          "label": "Source code on GitHub"
+        }
+      },
+      {
+        "heading": "Other people's content",
+        "body": [
+          "The sample photos, the demo layouts from Tails by DevDojo and any third-party names belong to their owners."
+        ]
+      },
+      {
+        "heading": "Privacy",
+        "body": [
+          "How the site handles your data is described on the privacy page."
+        ],
+        "link": {
+          "to": "/privacy",
+          "label": "Read the privacy page"
+        }
+      }
+    ]
   }
 }

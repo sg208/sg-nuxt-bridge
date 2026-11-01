@@ -42,10 +42,19 @@ export const useNavigationStore = defineStore("navigation", {
           name: "Pricing",
           path: "/pricing",
         },
-
         {
           name: "Contact",
           path: "/contact",
+        },
+      ],
+      legal: [
+        {
+          name: "Accessibility",
+          path: "/accessibility",
+        },
+        {
+          name: "Privacy",
+          path: "/privacy",
         },
         {
           name: "Terms",
