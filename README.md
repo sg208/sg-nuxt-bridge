@@ -39,7 +39,7 @@ A few details for other hosts:
 
 - Unknown paths fall back to the single-page app, and `app/error.vue` shows the not-found page.
 - `public/sw.js` removes the service worker left by an old PWA build. Keep it.
-- `.github/workflows/main.yml` is an old Bunny.net deploy workflow. It is commented out.
+- Pages answer at the no-slash URL (`/privacy`); `/privacy/` redirects there (`html_handling` in `wrangler.jsonc`).
 
 ## License
 

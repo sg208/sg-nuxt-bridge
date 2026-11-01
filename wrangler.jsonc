@@ -4,6 +4,9 @@
   "assets": {
     "directory": ".output/public",
     "not_found_handling": "single-page-application",
+    // App links use /privacy, not /privacy/: serve privacy/index.html at the
+    // no-slash URL and redirect the slash form to it
+    "html_handling": "drop-trailing-slash",
   },
   "routes": [{ "pattern": "sg-nuxt-bridge.engg.app", "custom_domain": true }],
   "workers_dev": false,
