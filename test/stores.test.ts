@@ -17,7 +17,11 @@ describe("navigation store", () => {
   });
 
   const navigation = () => useNavigationStore();
-  const allItems = () => [...navigation().header, ...navigation().footer];
+  const allItems = () => [
+    ...navigation().header,
+    ...navigation().footer,
+    ...navigation().legal,
+  ];
 
   it("links only to pages that exist", () => {
     for (const item of allItems()) {
