@@ -94,7 +94,7 @@
       {
         "heading": "How we check",
         "body": [
-          "Automated tests cover the menu, the theme switch and keyboard focus. The rest has been checked by hand with a keyboard and at a 360 pixel wide screen. No outside audit has been done."
+          "Automated tests cover the menu, the theme switch and keyboard focus. Browser tests also check the legal pages at a 360 pixel wide screen. No outside audit has been done."
         ]
       },
       {
