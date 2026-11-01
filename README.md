@@ -1,53 +1,45 @@
-# SG-NUXT-BRIDGE
+# sg-nuxt-bridge
 
-## Overview
+A starter site for Nuxt 4 with landing, blog, pricing, team and legal pages. It began as a Nuxt Bridge template and the name stuck after the move to Nuxt 4.
 
-This started as a working template with Nuxt Bridge. It now runs on Nuxt 4; the repo name is kept for history.
+Live: https://sg-nuxt-bridge.engg.app
 
-## Stacks inside this template
+## Stack
 
-- Nuxt 4 (Vue 3, JavaScript, `ssr: false` static output)
-- Vue 3 (Script Setup + Composition API + Options API)
-- Tailwind CSS (v4, via `@tailwindcss/vite`)
-- Pinia (Vue store)
-- @nuxtjs/i18n (Internationalization)
-- VueUse
-- Fancy routing transitions
-- Layouts
-- Demo content from Tails (DevDojo), restyled with design tokens and a light/dark theme
-- Vitest + @nuxt/test-utils
-- Deploy to Cloudflare Workers (static assets)
-- Deploy to Bunny.net (Storage + CDN) with GitHub Actions (CI) **\_ CURRENTLY DISABLED _**
+- Nuxt 4 and Vue 3, built as a static site (`ssr: false`)
+- Tailwind CSS 4 through `@tailwindcss/vite`, with design tokens and a light and dark theme
+- Pinia for state, VueUse, `@nuxtjs/i18n` for translated strings (English only for now)
+- Vitest with `@nuxt/test-utils`
+- Demo layouts from Tails by DevDojo, restyled
 
-## Getting started
+## Run it locally
+
+You need Node 24 (see `.node-version`) and pnpm.
 
 ```bash
-pnpm install   # Node 24 (.node-version), pnpm (packageManager in package.json)
-pnpm dev       # dev server
-pnpm build     # static site in .output/public (dist symlinks to it)
-pnpm lint      # ESLint + Prettier check
-pnpm typecheck  # vue-tsc via nuxi
-pnpm test      # Vitest
+pnpm install
+pnpm dev        # dev server
+pnpm lint       # ESLint and Prettier check
+pnpm typecheck  # vue-tsc through nuxi
+pnpm test       # Vitest
+pnpm build      # static site in .output/public
 ```
 
-## Deploy to Cloudflare Workers
+## Deploy
 
-https://sg-nuxt-bridge.engg.app
+The site runs on a Cloudflare Worker that serves the static files in `.output/public`. The config is in `wrangler.jsonc`.
 
-The site runs as a Cloudflare Worker serving static assets on the sg208 account. `wrangler.jsonc` serves `.output/public`, which `pnpm generate` produces. `pnpm run deploy` builds and runs `wrangler deploy`; it needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in the environment.
+```bash
+pnpm run deploy   # builds, then runs wrangler deploy
+```
 
-## Deploy to Bunny.net (Storage + CDN) with GitHub Actions **\_ CURRENTLY DISABLED _**
+Wrangler 4 is a dev dependency, so you only need `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` set in your environment. Use `pnpm run deploy`, since a bare `pnpm deploy` is a pnpm built-in command.
 
-https://sg-nuxt-bridge-bunny.engg.me **\_ CURRENTLY DISABLED _**
+A few details for other hosts:
 
-## Deployment notes
-
-- Node version: `24`
-- Rendering: client-side only (`ssr: false`)
-- Public folder: `.output/public` (`dist` is a symlink to it)
-- Build command: `pnpm build`
-- 404 redirect for your hoster: `/404.html`
-- Custom error page: `./app/error.vue`
+- Unknown paths fall back to the single-page app, and `app/error.vue` shows the not-found page.
+- `public/sw.js` removes the service worker left by an old PWA build. Keep it.
+- `.github/workflows/main.yml` is an old Bunny.net deploy workflow. It is commented out.
 
 ## License
 

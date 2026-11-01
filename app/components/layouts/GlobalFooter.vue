@@ -43,9 +43,30 @@
       >
         brands<span class="text-band-muted">.</span>
       </p>
-      <p class="mt-8 text-sm text-band-muted">
-        © {{ year }} {{ $t("footer.rights") }}
-      </p>
+      <div
+        class="mt-8 flex flex-col gap-4 text-sm text-band-muted md:flex-row md:items-center md:justify-between"
+      >
+        <p>© {{ year }} {{ $t("footer.rights") }}</p>
+        <nav :aria-label="$t('a11y.legal-nav')">
+          <ul class="flex flex-wrap gap-x-6 gap-y-1">
+            <li v-for="nav in navigations.legal" :key="nav.name">
+              <NuxtLink :to="nav.path" class="text-link inline-block py-2">
+                {{ $t(`navigation.${nav.name}`) }}
+              </NuxtLink>
+            </li>
+            <li>
+              <a
+                :href="repoUrl"
+                class="text-link inline-flex items-center gap-2 py-2"
+              >
+                <SocialIcon name="github" class="size-4 shrink-0" />
+                {{ $t("footer.source")
+                }}<span class="sr-only">{{ $t("footer.source-label") }}</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </section>
 </template>
@@ -53,6 +74,7 @@
 <script setup>
 const navigations = useNavigationStore();
 const year = new Date().getFullYear();
+const repoUrl = "https://github.com/sg208/sg-nuxt-bridge";
 
 const socials = [
   { name: "Facebook", icon: "facebook" },
