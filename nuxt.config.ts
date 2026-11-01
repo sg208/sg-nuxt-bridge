@@ -13,14 +13,22 @@ export default defineNuxtConfig({
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "description", content: "" },
+        {
+          name: "description",
+          content:
+            "A Nuxt 4 starter with landing, blog, pricing and team pages.",
+        },
         { name: "format-detection", content: "telephone=no" },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
 
-  css: ["~/assets/css/tailwind.css", "~/assets/css/main.css"],
+  css: [
+    "@fontsource-variable/epilogue",
+    "~/assets/css/tailwind.css",
+    "~/assets/css/main.css",
+  ],
 
   // Components in app/components/layouts keep their short names (GlobalNav, not LayoutsGlobalNav)
   components: [{ path: "~/components", pathPrefix: false }],

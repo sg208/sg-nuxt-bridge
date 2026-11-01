@@ -24,3 +24,13 @@ describe("GlobalNav", () => {
     expect(menuClasses).not.toContain("hidden");
   });
 });
+
+describe("GlobalNav keyboard", () => {
+  it("closes the mobile menu on Escape", async () => {
+    const wrapper = await mountSuspended(GlobalNav);
+    await wrapper.get("button[aria-label='Toggle menu']").trigger("click");
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+    await wrapper.vm.$nextTick();
+    expect(wrapper.get("#global-nav-menu").classes()).toContain("hidden");
+  });
+});
