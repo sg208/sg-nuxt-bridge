@@ -35,6 +35,8 @@
 </template>
 
 <script setup>
-const { locale, locales } = useI18n();
+const { locale, locales, t } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
+
+useHead({ title: computed(() => t("navigation.Contact")) });
 </script>

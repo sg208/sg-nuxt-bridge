@@ -25,7 +25,18 @@ const props = defineProps({
   },
 });
 
+const { t } = useI18n();
+
 const isNotFound = computed(() => props.error?.statusCode === 404);
+
+useHead({
+  titleTemplate: "%s · sg-nuxt-bridge",
+  title: computed(() =>
+    isNotFound.value
+      ? t("page_Error.page-not-found")
+      : t("page_Error.error-occured"),
+  ),
+});
 
 const handleGoHome = () => clearError({ redirect: "/" });
 </script>

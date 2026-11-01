@@ -2,6 +2,7 @@
   <nav
     :aria-label="$t('a11y.primary-nav')"
     class="frame relative flex h-20 items-center justify-between gap-6"
+    @focusout="handleFocusOut"
   >
     <NuxtLink
       to="/"
@@ -78,8 +79,17 @@ const menuButton = useTemplateRef("menuButton");
 
 const handleKeydown = (event) => {
   if (event.key !== "Escape" || !isMenuOpen.value) return;
+  const nav = menuButton.value?.closest("nav");
+  const isFocusInside = nav?.contains(document.activeElement);
   isMenuOpen.value = false;
-  menuButton.value?.focus();
+  if (isFocusInside) menuButton.value?.focus();
+};
+
+const handleFocusOut = (event) => {
+  if (!isMenuOpen.value || !event.relatedTarget) return;
+  if (!event.currentTarget.contains(event.relatedTarget)) {
+    isMenuOpen.value = false;
+  }
 };
 
 watch(

@@ -54,4 +54,8 @@
 
 <script setup>
 import { featuredPost, posts } from "~/data/posts";
+
+const { t } = useI18n();
+
+useHead({ title: computed(() => t("navigation.Blog")) });
 </script>

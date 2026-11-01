@@ -13,6 +13,12 @@
           plan.isFeatured ? 'band bg-band text-band-ink' : 'bg-surface text-ink'
         "
       >
+        <p
+          v-if="plan.isFeatured"
+          class="mb-3 text-sm font-semibold tracking-[0.08em] text-band-muted uppercase"
+        >
+          {{ t("page_Pricing.popular") }}
+        </p>
         <h2
           class="text-[1.75rem] leading-tight font-semibold tracking-[-0.03em]"
         >
@@ -63,6 +69,10 @@
 
 <script setup>
 import { plans } from "~/data/plans";
+
+const { t } = useI18n();
+
+useHead({ title: computed(() => t("navigation.Pricing")) });
 </script>
 
 <style scoped>

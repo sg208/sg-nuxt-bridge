@@ -39,6 +39,10 @@
 <script setup>
 import { team } from "~/data/team";
 
+const { t } = useI18n();
+
+useHead({ title: computed(() => t("navigation.Team")) });
+
 const networks = [
   { name: "Twitter", icon: "twitter" },
   { name: "GitHub", icon: "github" },

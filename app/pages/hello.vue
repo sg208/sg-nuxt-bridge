@@ -6,6 +6,8 @@
 const { t } = useI18n();
 const route = useRoute();
 
+useHead({ title: "Hello" });
+
 const rows = computed(() => [
   { label: "Route name", value: String(route.name) },
   { label: "t in script setup", value: t("page_Index.Hero-heading") },
