@@ -1,18 +1,19 @@
 <template>
   <section>
-    <PageIntro title="An incredible team of amazing individuals" />
+    <PageIntro
+      title="An incredible team of amazing individuals"
+      :lead="$t('page_Team.sample')"
+    />
     <ul
       class="frame grid grid-cols-2 gap-x-4 gap-y-12 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4"
     >
       <li v-for="person in team" :key="person.name" class="reveal">
-        <img
-          :src="person.image"
-          alt=""
-          width="500"
-          height="500"
-          loading="lazy"
-          class="aspect-square w-full bg-surface object-cover saturate-[0.85]"
-        />
+        <span
+          aria-hidden="true"
+          class="flex aspect-square w-full items-center justify-center bg-surface text-[clamp(2.5rem,1.5rem+4vw,4.5rem)] font-semibold tracking-[-0.04em] text-muted"
+        >
+          {{ person.initials }}
+        </span>
         <h2 class="mt-4 text-lg leading-tight font-semibold tracking-[-0.01em]">
           {{ person.name }}
         </h2>

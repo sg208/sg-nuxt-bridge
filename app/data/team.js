@@ -1,12 +1,17 @@
-const photo = (id) => `https://cdn.devdojo.com/images/june2021/avt-${id}.jpg`;
-
+// A fictional sample team for the template; replace with real people
 export const team = [
-  { name: "Freddy Smith", role: "CEO and Founder", image: photo("03") },
-  { name: "Carl Jones", role: "CTO and Co-Founder", image: photo("07") },
-  { name: "Susan Peterson", role: "Marketing Director", image: photo("20") },
-  { name: "Tommy Barnes", role: "Designer", image: photo("09") },
-  { name: "Ron Jenson", role: "Senior Developer", image: photo("14") },
-  { name: "Pete Tompkins", role: "Web Developer", image: photo("13") },
-  { name: "Kelly Richards", role: "Sales Manager", image: photo("16") },
-  { name: "Alexis Jordan", role: "Affiliate Manager", image: photo("08") },
-];
+  { name: "Robin Placeholder", role: "Founder" },
+  { name: "Casey Sample", role: "Engineering lead" },
+  { name: "Morgan Example", role: "Marketing" },
+  { name: "Jordan Demo", role: "Designer" },
+  { name: "Taylor Mock", role: "Senior developer" },
+  { name: "Riley Stub", role: "Web developer" },
+  { name: "Quinn Fixture", role: "Sales" },
+  { name: "Avery Draft", role: "Partnerships" },
+].map((person) => ({
+  ...person,
+  initials: person.name
+    .split(" ")
+    .map((part) => part[0])
+    .join(""),
+}));
