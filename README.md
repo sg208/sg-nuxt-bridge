@@ -33,7 +33,7 @@ The site runs on a Cloudflare Worker that serves the static files in `.output/pu
 pnpm run deploy   # builds, then runs wrangler deploy
 ```
 
-This needs `wrangler` 4 installed globally and `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` set in your environment. Use `pnpm run deploy`, since a bare `pnpm deploy` is a pnpm built-in command.
+Wrangler 4 is a dev dependency, so you only need `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` set in your environment. Use `pnpm run deploy`, since a bare `pnpm deploy` is a pnpm built-in command.
 
 A few details for other hosts:
 
