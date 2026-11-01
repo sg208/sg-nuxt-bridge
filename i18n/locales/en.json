@@ -94,7 +94,7 @@
       {
         "heading": "How we check",
         "body": [
-          "Automated tests cover the menu, the theme switch and keyboard focus. Browser tests also check the legal pages at a 360 pixel wide screen. No outside audit has been done."
+          "Automated unit tests cover the menu, the theme switch, keyboard focus and the footer legal links. There are no browser tests and no outside audit has been done."
         ]
       },
       {
