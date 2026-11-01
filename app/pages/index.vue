@@ -76,10 +76,6 @@
         </div>
       </div>
     </section>
-
-    <div class="mt-32 md:mt-48">
-      <LogoStrip />
-    </div>
   </div>
 </template>
 

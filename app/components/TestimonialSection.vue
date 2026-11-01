@@ -13,10 +13,8 @@
           {{ title }}
         </component>
         <p class="mt-6 max-w-[34ch] text-lg leading-snug">
-          Our customers love our product. Don't just take our word for it, read
-          from our extensive list of case studies and customer testimonials.
+          {{ $t("testimonials.lead") }}
         </p>
-        <a href="#" class="button mt-8">View case studies</a>
       </div>
     </div>
 
@@ -34,14 +32,12 @@
             <p>{{ item.quote }}</p>
           </blockquote>
           <figcaption class="mt-5 flex items-center gap-4">
-            <img
-              :src="item.image"
-              alt=""
-              width="48"
-              height="48"
-              loading="lazy"
-              class="size-12 rounded-full bg-surface object-cover"
-            />
+            <span
+              aria-hidden="true"
+              class="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-surface text-[0.9375rem] font-medium"
+            >
+              {{ item.initials }}
+            </span>
             <span>
               <span class="block font-medium">{{ item.name }}</span>
               <span class="block text-[0.9375rem] text-muted">

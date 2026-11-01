@@ -28,6 +28,9 @@
     "social": "Social links",
     "home": "brands, home page"
   },
+  "testimonials": {
+    "lead": "Sample quotes from fictional customers, here to show how this section reads. Replace them with real words from real people."
+  },
   "theme": {
     "dark": "Dark theme"
   },
