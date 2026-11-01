@@ -12,6 +12,7 @@
     </NuxtLink>
 
     <button
+      ref="menuButton"
       type="button"
       :aria-expanded="isMenuOpen"
       aria-controls="global-nav-menu"
@@ -73,8 +74,12 @@ const handleToggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
+const menuButton = useTemplateRef("menuButton");
+
 const handleKeydown = (event) => {
-  if (event.key === "Escape") isMenuOpen.value = false;
+  if (event.key !== "Escape" || !isMenuOpen.value) return;
+  isMenuOpen.value = false;
+  menuButton.value?.focus();
 };
 
 watch(
