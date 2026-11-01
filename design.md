@@ -3,7 +3,7 @@
 ## Architecture
 
 - SHAPE: Nuxt 4 client-only SPA (`ssr: false`, `nuxt.config.ts:5`), prerendered by `nuxt generate` → `.output/public`. WHY: template site, no server logic.
-- HOST: Cloudflare Worker serving static assets — `wrangler.jsonc:5` (`.output/public`) · `wrangler.jsonc:6` SPA not-found fallback · `wrangler.jsonc:9` `drop-trailing-slash` (links use `/privacy`, so that form answers 200) · `wrangler.jsonc:11` custom domain `sg-nuxt-bridge.engg.app`. No Worker script; assets only.
+- HOST: Cloudflare Worker serving static assets — `wrangler.jsonc:5` (`.output/public`) · `wrangler.jsonc:8` `404-page` (unknown paths → 404 + `404.html`, which renders `app/pages/[...slug].vue`) · `wrangler.jsonc:11` `drop-trailing-slash` (links use `/privacy`, so that form answers 200) · `wrangler.jsonc:13` custom domain `sg-nuxt-bridge.engg.app`. No Worker script; assets only.
 - RETIRED HOSTS: Vercel · Netlify · Railway · Cloudflare Pages · Bunny.net · engg.me. No config for them remains.
 - DEPLOY: manual `pnpm run deploy` (`package.json` `deploy` = `pnpm generate && wrangler deploy`); `wrangler` v4 (devDependency) + env `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`. No CI workflows.
 
@@ -19,7 +19,7 @@
 | copy       | `i18n/locales/en.json`                                              | all UI strings; `no_prefix`, English only (`nuxt.config.ts:42-55`)                             |
 | state      | `app/stores/navigations.js:3`                                       | `header` · `footer` · `legal` link lists                                                       |
 | theme      | `app/assets/css/tailwind.css` · `app/components/ThemeToggle.vue:34` | CSS tokens on `:root`; dark via system or `html.dark`/`html.light` class from VueUse `useDark` |
-| errors     | `app/error.vue:30`                                                  | 404 vs generic; `clearError` home `:41`                                                        |
+| errors     | `app/error.vue:30`                                                  | 404 vs generic; `clearError` home `:41` · unknown routes → `app/pages/[...slug].vue`           |
 
 ## Data flow
 
