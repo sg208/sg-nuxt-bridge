@@ -49,8 +49,7 @@
     "pages": "Pages",
     "follow": "Follow",
     "rights": "SomeCompany, Inc. All rights reserved.",
-    "source": "Source on GitHub",
-    "source-label": ", opens the sg-nuxt-bridge repository on GitHub"
+    "source": "Source code on GitHub (opens in a new tab)"
   },
   "navigation": {
     "Home": "Home",

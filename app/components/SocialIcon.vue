@@ -1,5 +1,10 @@
 <template>
-  <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
     <path fill-rule="evenodd" clip-rule="evenodd" :d="socialIcons[name]" />
   </svg>
 </template>

@@ -13,13 +13,30 @@ describe("GlobalFooter", () => {
     );
   });
 
-  it("links to the repo with a name that says it opens GitHub", async () => {
+  it("has exactly one GitHub link: a repo icon that opens in a new tab", async () => {
     const wrapper = await mountSuspended(GlobalFooter);
-    const repo = wrapper.get(
-      "a[href='https://github.com/sg208/sg-nuxt-bridge']",
+    const github = wrapper
+      .findAll("a")
+      .filter((link) => link.attributes("href")?.includes("github.com"));
+    expect(github).toHaveLength(1);
+    const repo = github[0]!;
+    expect(repo.attributes("href")).toBe(
+      "https://github.com/sg208/sg-nuxt-bridge",
     );
-    expect(repo.text()).toContain("Source on GitHub");
-    expect(repo.text()).toContain("repository on GitHub");
+    expect(repo.attributes("aria-label")).toBe(
+      "Source code on GitHub (opens in a new tab)",
+    );
+    expect(repo.attributes("target")).toBe("_blank");
+    expect(repo.attributes("rel")).toBe("noopener noreferrer");
+    expect(repo.text()).toBe("");
+    expect(repo.get("svg").attributes("aria-hidden")).toBe("true");
+    expect(repo.get("svg").attributes("focusable")).toBe("false");
+  });
+
+  it("does not list GitHub among the social links", async () => {
+    const wrapper = await mountSuspended(GlobalFooter);
+    const social = wrapper.get("ul[aria-label='Social links']");
+    expect(social.text()).not.toContain("GitHub");
   });
 });
 

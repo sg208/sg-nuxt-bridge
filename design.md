@@ -24,7 +24,7 @@
 ## Data flow
 
 1. Route → page component → reads `app/data/*.js` + `$t()` keys → renders inside default layout.
-2. Footer → `navigations.legal` (`GlobalFooter.vue:52`) + GitHub repo link `repoUrl` (`GlobalFooter.vue:77`, https://github.com/sg208/sg-nuxt-bridge).
+2. Footer → `navigations.legal` (`GlobalFooter.vue:52`) + GitHub repo icon link `repoUrl` (`GlobalFooter.vue:78`, https://github.com/sg208/sg-nuxt-bridge).
 3. Legal pages (`accessibility` · `privacy` · `terms`) → `LegalPage.vue` with `page="page_<Name>"` → sections from `en.json` (`page_Legal:67` · `page_Accessibility:70` · `page_Privacy:112` · `page_Terms:145`).
 4. Theme choice → `useDark` persists to localStorage → class on `<html>` → token overrides.
 

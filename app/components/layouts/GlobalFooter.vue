@@ -57,11 +57,12 @@
             <li>
               <a
                 :href="repoUrl"
-                class="text-link inline-flex items-center gap-2 py-2"
+                :aria-label="$t('footer.source')"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex size-8 items-center justify-center transition-colors hover:text-band-ink"
               >
-                <SocialIcon name="github" class="size-4 shrink-0" />
-                {{ $t("footer.source")
-                }}<span class="sr-only">{{ $t("footer.source-label") }}</span>
+                <SocialIcon name="github" class="size-4" />
               </a>
             </li>
           </ul>
@@ -80,7 +81,6 @@ const socials = [
   { name: "Facebook", icon: "facebook" },
   { name: "Instagram", icon: "instagram" },
   { name: "Twitter", icon: "twitter" },
-  { name: "GitHub", icon: "github" },
   { name: "Dribbble", icon: "dribbble" },
 ];
 </script>
