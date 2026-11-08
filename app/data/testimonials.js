@@ -1,13 +1,12 @@
 // Placeholder quotes for the template; swap in real words from real customers
 export const testimonials = [
   {
-    quote: "Awesome product! And the customer service is exceptionally good.",
+    quote: "Good product, and the support team answers fast.",
     name: "Jane Placeholder",
     role: "Founder, Example Co.",
   },
   {
-    quote:
-      "I can't express enough how amazing this service has been for my company.",
+    quote: "This service has made a real difference to how my company works.",
     name: "Sam Sample",
     role: "Director, Sample Studio",
   },

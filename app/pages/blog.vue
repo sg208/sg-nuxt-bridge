@@ -13,7 +13,9 @@
         />
       </a>
       <div class="md:col-span-5">
-        <p class="text-[0.9375rem] text-accent">Featured</p>
+        <p class="text-[0.9375rem] text-accent">
+          {{ $t("page_Blog.featured") }}
+        </p>
         <h2
           class="mt-3 text-[clamp(2rem,1.3rem+2.6vw,3.5rem)] leading-[1] font-semibold tracking-[-0.035em]"
         >

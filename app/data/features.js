@@ -1,7 +1,7 @@
 export const features = [
   {
     name: "Certifications",
-    text: "Each of our plans will provide you and your team with certifications.",
+    text: "Each plan comes with certifications for you and your team.",
   },
   {
     name: "Notifications",
@@ -9,7 +9,7 @@ export const features = [
   },
   {
     name: "Bundles",
-    text: "High-quality bundles of awesome tools to help you out.",
+    text: "Bundles of tools, picked to work together.",
   },
   {
     name: "Developer tools",
@@ -17,7 +17,7 @@ export const features = [
   },
   {
     name: "Building blocks",
-    text: "The right kind of building blocks to take your company to the next level.",
+    text: "Building blocks you can combine as the company grows.",
   },
   {
     name: "Coupons",

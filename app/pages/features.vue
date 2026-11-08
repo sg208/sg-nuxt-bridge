@@ -1,8 +1,8 @@
 <template>
   <section>
     <PageIntro
-      title="Our features"
-      lead="Check out our list of awesome features below."
+      :title="$t('navigation.Features')"
+      :lead="$t('page_Features.lead')"
     />
     <FeatureList heading-tag="h2" />
   </section>

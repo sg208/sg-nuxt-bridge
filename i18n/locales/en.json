@@ -7,18 +7,24 @@
   },
   "page_Index": {
     "Hero-heading": "Start crafting your next great idea",
-    "Hero-subheading": "Simplifying the creation of landing pages, blog pages, application pages and so much more!",
+    "Hero-subheading": "Landing pages, a blog, pricing and a team page, ready to fill with your own words.",
     "purchase": "Purchase now",
-    "price-note": "only $15/mo",
-    "learn-more": "Learn more"
+    "price-note": "from $5 a month",
+    "learn-more": "Learn more",
+    "features-heading": "What you get",
+    "features-lead": "Six things the template does for you.",
+    "offer-heading-start": "Plans start at",
+    "offer-price": "$5",
+    "offer-heading-end": "a month.",
+    "offer-lead": "Starter, Basic and Plus: three plans for teams of every size."
+  },
+  "page_Features": {
+    "lead": "Six things the template does for you."
   },
   "page_Contact": {
     "lead": "Pick the language you want to read this site in.",
     "languages": "Languages",
     "current": "Current language"
-  },
-  "page_Demo": {
-    "lead": "This page shows translated strings, read in the template and in script setup."
   },
   "a11y": {
     "skip": "Skip to content",
@@ -30,12 +36,24 @@
     "legal-nav": "Legal"
   },
   "page_Pricing": {
-    "popular": "Most popular"
+    "popular": "Most popular",
+    "title": "Pricing",
+    "lead": "Three plans. Pick the one that fits your team, change it later.",
+    "per-month": "/ month",
+    "select": "Select plan"
   },
   "page_Team": {
+    "title": "The team",
+    "on-network": "{name} on {network}",
     "sample": "A sample team of fictional people, to show how this page reads."
   },
+  "page_Blog": {
+    "featured": "Featured",
+    "by": "by",
+    "read-time": "{minutes} min. read"
+  },
   "testimonials": {
+    "title": "Testimonials",
     "lead": "Sample quotes from fictional customers, here to show how this section reads. Replace them with real words from real people."
   },
   "theme": {
