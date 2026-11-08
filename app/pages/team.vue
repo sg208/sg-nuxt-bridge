@@ -43,7 +43,7 @@ import { team } from "~/data/team";
 
 const { t } = useI18n();
 
-useHead({ title: computed(() => t("navigation.Team")) });
+useHead({ title: computed(() => t("page_Team.title")) });
 
 const networks = [
   { name: "Twitter", icon: "twitter" },

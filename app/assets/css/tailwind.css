@@ -74,7 +74,6 @@
   --color-band: var(--band);
   --color-band-ink: var(--band-ink);
   --color-band-muted: var(--band-muted);
-  --color-band-accent: var(--band-accent);
 }
 
 /* One frame for every section: equal outer margins at every width */
