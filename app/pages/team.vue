@@ -1,9 +1,6 @@
 <template>
   <section>
-    <PageIntro
-      title="An incredible team of amazing individuals"
-      :lead="$t('page_Team.sample')"
-    />
+    <PageIntro :title="$t('page_Team.title')" :lead="$t('page_Team.sample')" />
     <ul
       class="frame grid grid-cols-2 gap-x-4 gap-y-12 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4"
     >
@@ -26,7 +23,12 @@
             >
               <SocialIcon :name="network.icon" class="size-[1.125rem]" />
               <span class="sr-only">
-                {{ person.name }} on {{ network.name }}
+                {{
+                  $t("page_Team.on-network", {
+                    name: person.name,
+                    network: network.name,
+                  })
+                }}
               </span>
             </a>
           </li>
@@ -41,7 +43,7 @@ import { team } from "~/data/team";
 
 const { t } = useI18n();
 
-useHead({ title: computed(() => t("navigation.Team")) });
+useHead({ title: computed(() => t("page_Team.title")) });
 
 const networks = [
   { name: "Twitter", icon: "twitter" },

@@ -35,7 +35,7 @@ pnpm run deploy   # builds, then runs wrangler deploy
 
 Wrangler 4 is a dev dependency, so you only need `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` set in your environment. Use `pnpm run deploy`, since a bare `pnpm deploy` is a pnpm built-in command.
 
-A few details for other hosts:
+A few details about hosting:
 
 - Unknown paths answer 404 with `404.html`, and `app/pages/[...slug].vue` shows the not-found page. Every page is prerendered, so deep links answer 200.
 - `public/sw.js` removes the service worker left by an old PWA build. Keep it.

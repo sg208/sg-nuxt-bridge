@@ -40,17 +40,17 @@
           id="features-heading"
           class="reveal text-[clamp(2.5rem,1.4rem+4.4vw,5.25rem)] leading-[0.95] font-semibold tracking-[-0.04em] md:col-span-6"
         >
-          Our features
+          {{ $t("page_Index.features-heading") }}
         </h2>
         <p class="reveal max-w-[34ch] text-lg md:col-span-4 md:col-start-9">
-          Check out our list of awesome features below.
+          {{ $t("page_Index.features-lead") }}
         </p>
       </div>
       <FeatureList />
     </section>
 
     <div class="mt-32 md:mt-48">
-      <TestimonialSection />
+      <TestimonialSection :title="$t('testimonials.title')" />
     </div>
 
     <section aria-labelledby="offer-heading" class="frame mt-32 md:mt-48">
@@ -59,16 +59,17 @@
           id="offer-heading"
           class="max-w-[16ch] text-[clamp(2.25rem,1.2rem+4vw,4.75rem)] leading-[0.98] font-semibold tracking-[-0.04em]"
         >
-          Plans start at
-          <span class="bg-accent px-[0.15em] text-accent-ink">$5</span>
-          a month.
+          {{ $t("page_Index.offer-heading-start") }}
+          <span class="bg-accent px-[0.15em] text-accent-ink">
+            {{ $t("page_Index.offer-price") }}
+          </span>
+          {{ $t("page_Index.offer-heading-end") }}
         </h2>
         <div
           class="mt-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
         >
           <p class="max-w-[40ch] text-lg">
-            Starter, Basic and Plus: three plans for teams of every size, from
-            startups to enterprise companies.
+            {{ $t("page_Index.offer-lead") }}
           </p>
           <NuxtLink to="/pricing" class="button self-start md:self-auto">
             {{ $t("navigation.Pricing") }}

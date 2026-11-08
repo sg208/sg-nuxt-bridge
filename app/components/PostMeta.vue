@@ -1,10 +1,11 @@
 <template>
   <p class="text-[0.9375rem] text-muted">
-    by <a href="#" class="text-link text-ink">{{ post.author }}</a>
+    {{ $t("page_Blog.by") }}
+    <a href="#" class="text-link text-ink">{{ post.author }}</a>
     <span aria-hidden="true"> · </span>
     <time :datetime="post.date">{{ formattedDate }}</time>
     <span aria-hidden="true"> · </span>
-    {{ post.minutes }} min. read
+    {{ $t("page_Blog.read-time", { minutes: post.minutes }) }}
   </p>
 </template>
 

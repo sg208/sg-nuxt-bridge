@@ -1,8 +1,8 @@
 <template>
   <section>
     <PageIntro
-      title="Simple, transparent pricing"
-      lead="Pricing to fit the needs of any company size."
+      :title="$t('page_Pricing.title')"
+      :lead="$t('page_Pricing.lead')"
     />
     <ul class="frame grid gap-4 lg:grid-cols-3 lg:gap-5">
       <li
@@ -31,7 +31,7 @@
             ${{ plan.price }}
           </span>
           <span :class="plan.isFeatured ? 'text-band-muted' : 'text-muted'">
-            / month
+            {{ t("page_Pricing.per-month") }}
           </span>
         </p>
         <p class="mt-6 max-w-[30ch]">{{ plan.summary }}</p>
@@ -60,7 +60,8 @@
           class="button mt-auto w-full"
           :class="{ 'button-inverse': plan.isFeatured }"
         >
-          Select plan<span class="sr-only">: {{ plan.name }}</span>
+          {{ t("page_Pricing.select")
+          }}<span class="sr-only">: {{ plan.name }}</span>
         </button>
       </li>
     </ul>
@@ -77,11 +78,11 @@ useHead({ title: computed(() => t("navigation.Pricing")) });
 
 <style scoped>
 .band {
-  --focus: #9fc7b8;
+  --focus: var(--band-accent);
 }
 .button-inverse {
-  background-color: #9fc7b8;
-  color: #141917;
+  background-color: var(--band-accent);
+  color: var(--band-accent-ink);
 }
 .button-inverse:hover {
   background-color: var(--band-ink);

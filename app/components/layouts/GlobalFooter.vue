@@ -87,6 +87,6 @@ const socials = [
 
 <style scoped>
 .band {
-  --focus: #9fc7b8;
+  --focus: var(--band-accent);
 }
 </style>

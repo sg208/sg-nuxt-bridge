@@ -16,6 +16,8 @@
   --band: #18201d;
   --band-ink: #e4e3db;
   --band-muted: #a7aea7;
+  --band-accent: #9fc7b8;
+  --band-accent-ink: #141917;
   --focus: #2b6553;
   --logo-filter: grayscale(1) contrast(1.1);
 }
@@ -33,6 +35,8 @@
     --band: #0d1110;
     --band-ink: #e4e3db;
     --band-muted: #a3aaa3;
+    --band-accent: #9fc7b8;
+    --band-accent-ink: #141917;
     --focus: #9fc7b8;
     --logo-filter: grayscale(1) invert(1) brightness(1.4);
   }
@@ -50,6 +54,8 @@
   --band: #0d1110;
   --band-ink: #e4e3db;
   --band-muted: #a3aaa3;
+  --band-accent: #9fc7b8;
+  --band-accent-ink: #141917;
   --focus: #9fc7b8;
   --logo-filter: grayscale(1) invert(1) brightness(1.4);
 }
